@@ -1298,7 +1298,8 @@ var configSettings: SerializerSettings = {
     typeHintPropertyKey: "__type"
 };
 
-var TypedJSON: TypedJSON = {
+// var TypedJSON: TypedJSON = {
+var TypedJSON: any = { //fix
     config: function (settings: SerializerSettings) {
         configSettings = Helpers.merge(configSettings, settings);
     },
