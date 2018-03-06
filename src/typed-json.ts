@@ -1202,7 +1202,9 @@ abstract class Deserializer {
 
                 Object.keys(json).forEach(propertyKey => {
                     // Skip type-hint when copying properties.
-                    if (json[propertyKey] && propertyKey !== settings.typeHintPropertyKey) {
+
+                    // fix to prevent keys with "false" values from being removed from objects
+                    if (/*json[propertyKey] && */propertyKey !== settings.typeHintPropertyKey) {
                         var objectType;
                         if (Helpers.valueIsDefined(json[propertyKey])) {
                             objectType = json[propertyKey].constructor;
